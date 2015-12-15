@@ -9,8 +9,9 @@ var History = require('./history.js');
 var Talent = Bookshelf.Model.extend({
   tableName: 'talent',
   hasTimeStamps: 'true',
+  idAttribute: 'talent_id',
   skills: function() {
-    return this.belongsToMany(Skill, 'talent_skills');
+    return this.belongsToMany(Skill, 'talent_skills', 'talent_id', 'skill_id');
   },
   wageRequirements: function() {
     return this.hasMany(WageRequirement, 'talent_id');

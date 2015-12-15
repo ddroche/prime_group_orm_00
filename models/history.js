@@ -4,7 +4,6 @@
 var Bookshelf = require('./db/bookshelf');
 var Talent = require('./talent');
 
-
 var History = Bookshelf.Model.extend({
   tableName: 'history',
   hasTimeStamps: 'true',
